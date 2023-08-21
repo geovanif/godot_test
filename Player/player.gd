@@ -13,15 +13,19 @@ func _process(delta):
 	
 	if Input.is_action_pressed("down"):
 		direction.y = 1
+		$AnimatedSprite2D.flip_v = true
 		$AnimatedSprite2D.play('up')
 	if Input.is_action_pressed("left"):
 		direction.x = -1
+		$AnimatedSprite2D.flip_h = true
 		$AnimatedSprite2D.play("walk")
 	if Input.is_action_pressed("right"):
+		$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play("walk")
 		direction.x = 1
 	if Input.is_action_pressed('up'):
 		direction.y = -1
+		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.play('up')
 		
 	if direction.length() > 0:

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://3hhdwte4m7md"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_1dogx"]
+[ext_resource type="PackedScene" uid="uid://dc8s5ting8eul" path="res://Player/player.tscn" id="2_6jtvq"]
+
+[sub_resource type="Curve2D" id="Curve2D_tjnpn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1154, 3, 0, 0, 0, 0, 1153, 650, 0, 0, 0, 0, 3, 650, 0, 0, 0, 0, 1, 2)
+}
+point_count = 5
+
+[node name="Main" type="Node"]
+script = ExtResource("1_1dogx")
+
+[node name="Player" parent="." instance=ExtResource("2_6jtvq")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(569, 313)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_tjnpn")
